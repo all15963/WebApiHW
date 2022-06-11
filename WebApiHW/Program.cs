@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using WebApiPractice.Data;
+using WebApiPractice.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,6 +8,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<DataDbContext>(
     options => options.UseInMemoryDatabase("TempData")
     );
+
+// SetValueService DI
+builder.Services.AddTransient<ISetValueService, SetValueService>();
 // Add services to the container.
 
 builder.Services.AddControllers();
