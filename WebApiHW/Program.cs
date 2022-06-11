@@ -11,6 +11,8 @@ builder.Services.AddDbContext<DataDbContext>(
 
 // SetValueService DI
 builder.Services.AddTransient<ISetValueService, SetValueService>();
+// ValidValueService DI
+builder.Services.AddTransient<IValidValueService, ValidValueService>();
 // Add services to the container.
 
 builder.Services.AddControllers();
